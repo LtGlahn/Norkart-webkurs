@@ -1,3 +1,39 @@
+// Popup 
+function onEachFeature(feature, layer) {
+    // does this feature have a property named  name?
+    if (feature.properties && feature.properties.name) {
+        layer.bindPopup(feature.properties.name);
+    }
+}
+
+
+var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+
+function finnrullestolstyling( feature) {
+	stil = {
+		radius: 4,
+		fillColor: "#FF0000",
+		color: "#000000",
+		weight: 1,
+		opacity: 1,
+		fillOpacity: 0.6
+	}
+	
+ 	if ( feature.properties.wheelchair && feature.properties.wheelchair == "yes" ) {
+		stil.fillColor = "#00FF00";
+		stil.radius = 7; 
+	}
+	
+	return stil;
+}
+
 
 //Initializing the map
 function setMap() {
@@ -15,7 +51,19 @@ function setMap() {
       L.tileLayer(basemapUrl).addTo(map);
 
       //Adding geoJSON layer to the map:
-      L.geoJSON(restaurants).addTo(map);
+      L.geoJSON(restaurants, {
+		  onEachFeature : onEachFeature, 
+		  pointToLayer: function (feature, latlng) {
+				rullestolstyling = finnrullestolstyling(feature );
+				return L.circleMarker(latlng, rullestolstyling);
+			}
+
+	  } ).addTo(map);
+	  
+
 }
+
+
+
 
 window.onload = setMap;
