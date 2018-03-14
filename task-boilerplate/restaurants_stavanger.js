@@ -4,6 +4,12 @@ var restaurants = {
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
   "timestamp": "2018-03-13T10:36:03Z",
   "features": [
+  { "type": "Feature", "properties": { "@id" : "Jans polygnom", "amenity" : "geofence", "name" : "Jan buffer" }, 
+  "geometry": { "type": "Polygon", 
+  "coordinates": [ [ [ 5.747912356695861, 58.965558752421749 ], [ 5.748644185472337, 58.964870733937389 ], [ 5.751270159317339, 58.964604400515071 ], [ 5.753831560035006, 58.965836175345324 ], [ 5.749720404261272, 58.966834879384869 ], [ 5.749720404261272, 58.966834879384869 ], 
+  [ 5.747912356695861, 58.965558752421749 ] ] ] } }, 
+{ "type": "Feature", "properties": { "name": "Jans linje", "amenity": "snubletråd" }, "geometry": { "type": "LineString", "coordinates": [ [ 5.744812846583724, 58.965813981593577 ], [ 5.74606126037889, 58.964992802734955 ], [ 5.744769797832167, 58.964537816838003 ], [ 5.745544675360202, 58.964027337708181 ], [ 5.745544675360202, 58.964027337708181 ], [ 5.746362601639794, 58.964304772955551 ], [ 5.746362601639794, 58.964304772955551 ], [ 5.746362601639794, 58.964304772955551 ] ] } }
+  , 
     {
       "type": "Feature",
       "properties": {
